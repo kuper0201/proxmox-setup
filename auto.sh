@@ -8,3 +8,5 @@ chmod +x proxmox_gpu_passthrough.sh
 
 ./proxmox_first_setup.sh
 ./proxmox_gpu_passthrough.sh
+
+reboot

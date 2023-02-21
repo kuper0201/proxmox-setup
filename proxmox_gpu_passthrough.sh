@@ -5,7 +5,7 @@
 #proxmox-boot-tool refresh
 
 # for grub
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"/g' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt nofb nomodeset video=vesafb:off video=efifb:off"/g' /etc/default/grub
 update-grub
 
 # Load modules
@@ -18,6 +18,7 @@ echo "options vfio_iommu_type1 allow_unsafe_interrupts=1" > /etc/modprobe.d/iomm
 echo "options kvm ignore_msrs=1" > /etc/modprobe.d/kvm.conf
 
 # Add blacklist
+echo "blacklist amdgpu" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist radeon" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf

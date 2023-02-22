@@ -2,6 +2,9 @@
 
 # Static to DHCP
 sed -i 's/manual/dhcp/g' /etc/network/interfaces
+sed -i 's/static/dhcp/g' /etc/network/interfaces
+sed -i '/address/d' /etc/network/interfaces
+sed -i '/gateway/d' /etc/network/interfaces
 
 # Disable proxmox sub-repo
 echo "#`cat /etc/apt/sources.list.d/pve-enterprise.list`" > /etc/apt/sources.list.d/pve-enterprise.list

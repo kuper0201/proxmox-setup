@@ -17,6 +17,6 @@ wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-clo
 chmod +x update-cloudflare-dns.sh
 mv update-cloudflare-dns.sh /usr/local/bin/update-cloudflare-dns
 mv update-cloudflare-dns.conf /usr/local/bin/update-cloudflare-dns.conf
-(crontab -l 2>/dev/null; echo "*/10 * * * * /usr/local/bin/update-cloudflare-dns") | crontab -
+(crontab -l 2>/dev/null; echo "0 * * * * /usr/local/bin/update-cloudflare-dns") | crontab -
 
 reboot

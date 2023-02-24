@@ -22,6 +22,7 @@ echo "blacklist amdgpu" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist radeon" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
+echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf
 
 # for AMD R9 270X
 echo "options vfio-pci ids=1002:6810,1002:aab0 disable_vga=1" > /etc/modprobe.d/vfio.conf

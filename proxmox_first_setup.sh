@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Static to DHCP
-sed -i 's/manual/dhcp/g' /etc/network/interfaces
 sed -i 's/static/dhcp/g' /etc/network/interfaces
 sed -i '/address/d' /etc/network/interfaces
 sed -i '/gateway/d' /etc/network/interfaces

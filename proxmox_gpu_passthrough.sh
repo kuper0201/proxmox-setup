@@ -25,5 +25,8 @@ echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
 echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf
 
 # for AMD R9 270X
-echo "options vfio-pci ids=1002:6810,1002:aab0 disable_vga=1" > /etc/modprobe.d/vfio.conf
+#echo "options vfio-pci ids=1002:6810,1002:aab0 disable_vga=1" > /etc/modprobe.d/vfio.conf
+
+# for NVIDIA GTX960
+echo "options vfio-pci ids=10de:1401,10de:0fba disable_vga=1" > /etc/modprobe.d/vfio.conf
 update-initramfs -u

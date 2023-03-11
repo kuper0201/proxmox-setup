@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Setup Certificates
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_cert.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/cf_api.txt
+nano ./cf_api.txt
+chmod +x proxmox_cert.sh
+./proxmox_cert.sh
+rm -rf ./proxmox_cert.sh
+
+
 # DHCP, GPU Passthrough
 wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_first_setup.sh
 wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_gpu_passthrough.sh
@@ -9,6 +18,9 @@ chmod +x proxmox_gpu_passthrough.sh
 
 ./proxmox_first_setup.sh
 ./proxmox_gpu_passthrough.sh
+
+rm -rf ./proxmox_first_setup.sh
+rm -rf ./proxmox_gpu_passthrough.sh
 
 # CloudFlare DDNS
 wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-cloudflare-dns.sh

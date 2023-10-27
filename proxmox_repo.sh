@@ -7,4 +7,4 @@ echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription​
 #echo -e "" >> /etc/apt/sources.list
 
 # Ceph-repo
-echo -e "deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription" > /etc/apt/sources.list.d/ceph.list
+echo "deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription" > /etc/apt/sources.list.d/ceph.list

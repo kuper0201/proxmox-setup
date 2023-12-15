@@ -31,5 +31,8 @@ echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf
 #echo "options vfio-pci ids=10de:1401,10de:0fba disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 # for NVIDIA GTX1060
-echo "options vfio-pci ids=10de:10f1,10de:1c02 disable_vga=1" > /etc/modprobe.d/vfio.conf
+#echo "options vfio-pci ids=10de:10f1,10de:1c02 disable_vga=1" > /etc/modprobe.d/vfio.conf
+
+# for NVIDIA P102-100
+echo "options vfio-pci ids=10de:1b07 disable_vga=1" > /etc/modprobe.d/vfio.conf
 update-initramfs -u

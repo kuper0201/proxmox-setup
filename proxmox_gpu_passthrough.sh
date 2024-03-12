@@ -34,7 +34,7 @@ echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf
 #echo "options vfio-pci ids=10de:10f1,10de:1c02 disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 # for NVIDIA P102-100
-echo "options vfio-pci ids=10de:1b07 disable_vga=1" > /etc/modprobe.d/vfio.conf
+#echo "options vfio-pci ids=10de:1b07 disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 #for RTX2060 12GB
 echo "options vfio-pci ids=10de:1f03,10de:10f9 disable_vga=1" > /etc/modprobe.d/vfio.conf

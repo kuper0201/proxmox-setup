@@ -40,6 +40,11 @@ wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_gp
 chmod +x proxmox_gpu_passthrough.sh
 ./proxmox_gpu_passthrough.sh
 
+# Power Off Automatically
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/auto_off.sh
+chmod +x auto_off.sh
+mv auto_off.sh /usr/local/bin/auto_off.sh
+
 # CloudFlare DDNS Setup
 wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-cloudflare-dns.sh
 wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-cloudflare-dns.conf
@@ -52,7 +57,7 @@ sed -i "s/telegram_bot_token_here/$TG_Bot_Token/g" update-cloudflare-dns.conf
 chmod +x update-cloudflare-dns.sh
 mv update-cloudflare-dns.sh /usr/local/bin/update-cloudflare-dns
 mv update-cloudflare-dns.conf /usr/local/bin/update-cloudflare-dns.conf
-(crontab -l 2>/dev/null; echo -e "@reboot sleep 10 && /usr/local/bin/update-cloudflare-dns\n0 * * * * /usr/local/bin/update-cloudflare-dns") | crontab -
+(crontab -l 2>/dev/null; echo -e "@reboot sleep 10 && /usr/local/bin/update-cloudflare-dns\n0 * * * * /usr/local/bin/update-cloudflare-dns\n*/30 * * * * /usr/local/bin/auto_off.sh") | crontab -
 
 # Cleanup
 rm -rf ./proxmox_cert.sh

@@ -21,33 +21,33 @@ echo "CF_Account_ID=$CF_Account_ID" >> cf_api.txt
 echo "CF_Token=$CF_Token" >> cf_api.txt
 
 # Certificates Setup
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_cert.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/proxmox_cert.sh
 chmod +x proxmox_cert.sh
 ./proxmox_cert.sh
 
 # Network Setup
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_network.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/proxmox_network.sh
 chmod +x proxmox_network.sh
 ./proxmox_network.sh
 
 # Repository Setup
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_repo.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/proxmox_repo.sh
 chmod +x proxmox_repo.sh
 ./proxmox_repo.sh
 
 # GPU Passthrough
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/proxmox_gpu_passthrough.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/proxmox_gpu_passthrough.sh
 chmod +x proxmox_gpu_passthrough.sh
 ./proxmox_gpu_passthrough.sh
 
 # Power Off Automatically
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/auto_off.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/auto_off.sh
 chmod +x auto_off.sh
 mv auto_off.sh /usr/local/bin/auto_off.sh
 
 # CloudFlare DDNS Setup
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-cloudflare-dns.sh
-wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/master/update-cloudflare-dns.conf
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/update-cloudflare-dns.sh
+wget https://raw.githubusercontent.com/kuper0201/proxmox-setup/main/update-cloudflare-dns.conf
 
 sed -i "s/zoneid_here/$CF_Zone_ID/g" update-cloudflare-dns.conf
 sed -i "s/apitoken_here/$CF_Token/g" update-cloudflare-dns.conf

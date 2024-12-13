@@ -57,7 +57,7 @@ sed -i "s/telegram_bot_token_here/$TG_Bot_Token/g" update-cloudflare-dns.conf
 chmod +x update-cloudflare-dns.sh
 mv update-cloudflare-dns.sh /usr/local/bin/update-cloudflare-dns
 mv update-cloudflare-dns.conf /usr/local/bin/update-cloudflare-dns.conf
-(crontab -l 2>/dev/null; echo -e "@reboot sleep 10 && /usr/local/bin/update-cloudflare-dns\n0 * * * * /usr/local/bin/update-cloudflare-dns\n*/30 * * * * /usr/local/bin/auto_off.sh") | crontab -
+(crontab -l 2>/dev/null; echo -e "@reboot sleep 10 && /usr/local/bin/update-cloudflare-dns\n0 * * * * /usr/local/bin/update-cloudflare-dns\n0 */2 * * * /usr/local/bin/auto_off.sh") | crontab -
 
 # Cleanup
 rm -rf ./proxmox_cert.sh

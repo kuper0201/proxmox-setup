@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CODENAME=$(grep VERSION_CODENAME /etc/or-release | cut -d= -f2)
+CODENAME=$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)
 
 # Enable proxmox community-repo
 echo "deb http://download.proxmox.com/debian/pve $CODENAME pve-no-subscription" > /etc/apt/sources.list.d/pve-enterprise.list

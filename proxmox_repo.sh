@@ -6,7 +6,7 @@ CODENAME=$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)
 echo "deb http://download.proxmox.com/debian/pve $CODENAME pve-no-subscription" > /etc/apt/sources.list.d/pve-enterprise.list
 
 # Ceph-repo
-echo "deb http://download.proxmox.com/debian/ceph-quincy $CODENAME no-subscription" > /etc/apt/sources.list.d/ceph.list
+echo "deb http://download.proxmox.com/debian/ceph-squid $CODENAME no-subscription" > /etc/apt/sources.list.d/ceph.list
 
 # Disable Valid Pop-Up(8.0)
 # sed -i "s/\tExt.Msg.show/void/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js

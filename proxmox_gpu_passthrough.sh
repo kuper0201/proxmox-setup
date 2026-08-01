@@ -40,9 +40,12 @@ echo "blacklist snd_hda_intel" >> /etc/modprobe.d/blacklist.conf
 #echo "options vfio-pci ids=10de:1f03,10de:10f9 disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 # for RTX3090 24GB
-echo "options vfio-pci ids=10de:2204,10de:1aef disable_vga=1" > /etc/modprobe.d/vfio.conf
+#echo "options vfio-pci ids=10de:2204,10de:1aef disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 # for RTX2080TI 22GB
-echo "options vfio-pci ids=10de:1e04, 10de:10f7, 10de:1ad6, 10de:1ad7 disable_vga=1" > /etc/modprobe.d/vfio.conf
+#echo "options vfio-pci ids=10de:1e04,10de:10f7,10de:1ad6,10de:1ad7 disable_vga=1" > /etc/modprobe.d/vfio.conf
+
+# current use: RTX3090 24GB + RTX2080TI 22GB
+echo "options vfio-pci ids=10de:1e04,10de:10f7,10de:1ad6,10de:1ad7,10de:2204,10de:1aef disable_vga=1" > /etc/modprobe.d/vfio.conf
 
 update-initramfs -u
